@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Menu.Entrees
+namespace DinoDiner.Menu.Entrees
 {
     public class VelociWrap
     {
@@ -11,17 +11,17 @@ namespace Menu.Entrees
         private bool cheese = true;
 
         public double Price { get; set; }
-        private uint Calories { get; set; }
+        public uint Calories { get; set; }
 
-        private List<string> ingredients
+        public List<string> Ingredients
         {
             get
             {
-                List<string> ingredients = new List<string>() { "Flour Tortilla", "Chicken Breast", "Romaine Lettuce" };
+                List<string> ingredients = new List<string>() { "Flour Tortilla", "Chicken Breast" };
                 if (dressing)
                     ingredients.Add("Ceasar Dressing");
                 if (lettuce)
-                    ingredients.Add("Lettuce");
+                    ingredients.Add("Romaine Lettuce");
                 if (cheese)
                     ingredients.Add("Parmesan Cheese");
                 return ingredients;
@@ -34,6 +34,19 @@ namespace Menu.Entrees
             this.Calories = 356;
         }
 
+        public void HoldDressing()
+        {
+            this.dressing = false;
+        }
 
+        public void HoldLettuce()
+        {
+            this.lettuce = false;
+        }
+
+        public void HoldCheese()
+        {
+            this.cheese = false;
+        }
     }
 }
