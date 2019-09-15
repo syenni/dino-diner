@@ -27,6 +27,25 @@ namespace DinoDiner.Menu.Entrees
             }
         }
 
+        public Brontowurst()
+        {
+            this.Price = 5.36;
+            this.Calories = 498;
+        }
 
+        public void HoldBun()
+        {
+            this.bun = false;
+        }
+
+        public void HoldPeppers()
+        {
+            this.peppers = false;
+        }
+
+        public void HoldOnion()
+        {
+            this.onions = false;
+        }
     }
 }

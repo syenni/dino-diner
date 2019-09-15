@@ -1,4 +1,4 @@
-﻿/*using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Xunit;
 
 namespace MenuTest.Entrees
@@ -85,4 +85,4 @@ namespace MenuTest.Entrees
             Assert.Equal<uint>(59*9, dn.Calories);
         }
     }
-}*/
+}
