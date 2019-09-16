@@ -4,13 +4,25 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
+    /// <summary>
+    /// Class for the defintions of Brontowurst
+    /// </summary>
     public class Brontowurst
     {
+        /// <summary>
+        /// Variables for optional ingredients of the entree
+        /// </summary>
         private bool bun = true;
         private bool peppers = true;
         private bool onions = true;
 
+        /// <summary>
+        /// 
+        /// </summary>
         public double Price { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
         public uint Calories { get; set; }
         public List<string> Ingredients
         {
