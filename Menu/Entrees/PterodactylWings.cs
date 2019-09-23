@@ -4,11 +4,15 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class PterodactylWings
+    /// <summary>
+    /// Class for the defintions for the Pterodactyl Wings
+    /// </summary>
+    public class PterodactylWings : Entree
     {
-        public double Price { get; set; }
-        public uint Calories { get; set; }
-        public List<string> Ingredients
+        /// <summary>
+        /// Gets the ingredients
+        /// </summary>
+        public override List<string> Ingredients
         {
             get
             {
@@ -17,6 +21,9 @@ namespace DinoDiner.Menu.Entrees
             }
         }
 
+        /// <summary>
+        /// Constructor to set price and calories
+        /// </summary>
         public PterodactylWings()
         {
             this.Price = 7.21;

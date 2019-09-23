@@ -4,8 +4,12 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class TRexKingBurger
+    /// <summary>
+    /// Class for the defintions of the TRex King Burger
+    /// </summary>
+    public class TRexKingBurger : Entree
     {
+        //Local private varialbes to indicate to include options for the entree
         private bool bun = true;
         private bool lettuce = true;
         private bool tomato = true;
@@ -16,9 +20,10 @@ namespace DinoDiner.Menu.Entrees
         private bool mayo = true;
         private int pattieCount = 3;
 
-        public double Price { get; set; }
-        public uint Calories { get; set; }
-        public List<string> Ingredients
+        /// <summary>
+        /// Gets the ingredients for the entree
+        /// </summary>
+        public override List<string> Ingredients
         {
             get
             {
@@ -47,47 +52,74 @@ namespace DinoDiner.Menu.Entrees
             }
         }
 
+        /// <summary>
+        /// Constructor to set the default price and calories
+        /// </summary>
         public TRexKingBurger()
         {
             this.Price = 8.45;
             this.Calories = 728;
         }
 
+        /// <summary>
+        /// Method to hold the bun
+        /// </summary>
         public void HoldBun()
         {
             this.bun = false;
         }
 
+        /// <summary>
+        /// Method to hold the luttuce
+        /// </summary>
         public void HoldLettuce()
         {
             this.lettuce = false;
         }
 
+        /// <summary>
+        /// Method to hold the tomato
+        /// </summary>
         public void HoldTomato()
         {
             this.tomato = false;
         }
 
+        /// <summary>
+        /// Method to hold the onion
+        /// </summary>
         public void HoldOnion()
         {
             this.onion = false;
         }
 
+        /// <summary>
+        /// Method to hold the pcikle
+        /// </summary>
         public void HoldPickle()
         {
             this.pickle = false;
         }
 
+        /// <summary>
+        /// Method to hold the ketchup
+        /// </summary>
         public void HoldKetchup()
         {
             this.ketchup = false;
         }
 
+        /// <summary>
+        /// Method to hold the mustard
+        /// </summary>
         public void HoldMustard()
         {
             this.mustard = false;
         }
 
+        /// <summary>
+        /// Method to hold the mayo
+        /// </summary>
         public void HoldMayo()
         {
             this.mayo = false;

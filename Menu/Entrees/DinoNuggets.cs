@@ -4,9 +4,50 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class DinoNuggets
+    /// <summary>
+    /// Class for the Dino Nugget entree
+    /// </summary>
+    public class DinoNuggets : Entree
     {
+        /// <summary>
+        /// Private uint to keep track of the amount of nuggets
+        /// </summary>
         private uint nuggetCount = 6;
+
+        /// <summary>
+        /// Constructor to set calories and price
+        /// </summary>
+        public DinoNuggets()
+        {
+            this.Calories = 59 * 6;
+            this.Price = 4.25;
+        }
+
+        /// <summary>
+        /// Gets the ingredients based on the indegredient options for this entree
+        /// </summary>
+        public override List<string> Ingredients
+        {
+            get
+            {
+                List<string> ingredients = new List<string>();
+                for (uint i = 0; i < nuggetCount; i++)
+                {
+                    ingredients.Add("Chicken Nugget");
+                }
+                return ingredients;
+            }
+        }
+
+        public void AddNugget()
+        {
+            nuggetCount++;
+            Price += 0.25;
+            Calories += 59;
+        }
+
+
+        /*private uint nuggetCount = 6;
 
         public double Price { get; set; }
         public uint Calories { get; set; }
@@ -34,6 +75,6 @@ namespace DinoDiner.Menu.Entrees
             nuggetCount++;
             Price += 0.25;
             Calories += 59;
-        }
+        }*/
     }
 }
