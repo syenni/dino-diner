@@ -39,6 +39,9 @@ namespace DinoDiner.Menu.Entrees
             }
         }
 
+        /// <summary>
+        /// Adds a nugget to the total amoung of nuggets
+        /// </summary>
         public void AddNugget()
         {
             nuggetCount++;
