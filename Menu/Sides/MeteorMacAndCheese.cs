@@ -38,7 +38,7 @@ namespace DinoDiner.Menu.Sides
         {
             this.Price = 0.99;
             this.Calories = 420;
-            this.Ingredients = new List<string>() { "Macaroni Noodles", "Cheese Product", "Pork Sausuage" };
+            this.Ingredients = new List<string>() { "Macaroni Noodles", "Cheese Product", "Pork Sausage" };
         }
     }
 }

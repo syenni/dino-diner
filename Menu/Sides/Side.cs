@@ -5,16 +5,6 @@ using System.Text;
 namespace DinoDiner.Menu.Sides
 {
     /// <summary>
-    /// Enumerator for the options of sizes for the sides
-    /// </summary>
-    public enum Size
-    {
-        Small,
-        Medium, 
-        Large
-    }
-
-    /// <summary>
     /// Abstract class for the defintions of Side
     /// </summary>
     public abstract class Side
