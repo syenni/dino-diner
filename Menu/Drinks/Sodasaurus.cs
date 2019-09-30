@@ -4,12 +4,16 @@ using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
-    public class Sodasaurus
+    public class Sodasaurus : Drink
     {
+        //Private backing variables
         private SodasaurusFlavor flavor = SodasaurusFlavor.Cola; //backing variable, same name as the property but camel case format
         private Size size = Size.Small;
         private bool ice = true;
 
+        /// <summary>
+        /// Gets or sets the flavor
+        /// </summary>
         public SodasaurusFlavor Flavor
         {
             get
@@ -22,10 +26,10 @@ namespace DinoDiner.Menu.Drinks
             }
         }
 
-        public double Price { get; set; }
-        public uint Calories { get; set; }
+        //public double Price { get; set; }
+        //public uint Calories { get; set; }
 
-        public Size Size
+        public override Size Size
         {
             get
             {
@@ -52,6 +56,19 @@ namespace DinoDiner.Menu.Drinks
             }
         }
 
+        /// <summary>
+        /// Constructor for the defualt values
+        /// </summary>
+        public Sodasaurus()
+        {
+            this.Calories = 112;
+            this.Price = 1.50;
+            this.Ingredients = new List<string> { "Water", "Natural Flavors", "Cane Sugar" };
+        }
+
+        /// <summary>
+        /// Gets or sets the ice
+        /// </summary>
         public bool Ice
         {
             get
@@ -64,6 +81,9 @@ namespace DinoDiner.Menu.Drinks
             }
         }
 
+        /// <summary>
+        /// Method to hold ice
+        /// </summary>
         public void HoldIce()
         {
             ice = false;
