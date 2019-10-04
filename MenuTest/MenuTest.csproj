@@ -8,6 +8,8 @@
 
   <ItemGroup>
     <Compile Remove="ComboTest.cs" />
+    <Compile Remove="ImmutableIngredientsTest.cs" />
+    <Compile Remove="MenuItemNamesTest.cs" />
   </ItemGroup>
 
   <ItemGroup>
