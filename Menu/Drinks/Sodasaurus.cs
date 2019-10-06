@@ -4,12 +4,27 @@ using System.Text;
 
 namespace DinoDiner.Menu
 {
-    public class Sodasaurus : Drink
+    public class Sodasaurus : Drink, IMenuItem
     {
         //Private backing variables
         private SodasaurusFlavor flavor = SodasaurusFlavor.Cola; //backing variable, same name as the property but camel case format
         private Size size = Size.Small;
         private bool ice = true;
+        private uint calories = 112;
+        private double price = 1.50;
+
+        /// <summary>
+        /// Property for the calories
+        /// </summary>
+        public uint Calories { get => calories; }
+        /// <summary>
+        /// Property for the price
+        /// </summary>
+        public double Price { get => price; }
+        /// <summary>
+        /// Property for the ingredients
+        /// </summary>
+        public List<string> Ingredients { get => new List<string> { "Water", "Natural Flavors", "Cane Sugar" }; }
 
         /// <summary>
         /// Gets or sets the flavor
@@ -29,7 +44,7 @@ namespace DinoDiner.Menu
         //public double Price { get; set; }
         //public uint Calories { get; set; }
 
-        public override Size Size
+        public Size Size
         {
             get
             {
@@ -41,19 +56,28 @@ namespace DinoDiner.Menu
                 switch (size)
                 {
                     case Size.Large:
-                        Price = 2.50;
-                        Calories = 208;
+                        price = 2.50;
+                        calories = 208;
                         break;
                     case Size.Medium:
-                        Price = 2.00;
-                        Calories = 156;
+                        price = 2.00;
+                        calories = 156;
                         break;
                     case Size.Small:
-                        Price = 1.50;
-                        Calories = 112;
+                        price = 1.50;
+                        calories = 112;
                         break;
                 }
             }
+        }
+
+        /// <summary>
+        /// ToString override print the object
+        /// </summary>
+        /// <returns>The object in a string</returns>
+        public override string ToString()
+        {
+            return size + " " + flavor + " Sodasaurus";
         }
 
         /// <summary>
@@ -61,9 +85,9 @@ namespace DinoDiner.Menu
         /// </summary>
         public Sodasaurus()
         {
-            this.Calories = 112;
-            this.Price = 1.50;
-            this.Ingredients = new List<string> { "Water", "Natural Flavors", "Cane Sugar" };
+            //this.Calories = 112;
+            //this.Price = 1.50;
+            //this.Ingredients = new List<string> { "Water", "Natural Flavors", "Cane Sugar" };
         }
 
         /// <summary>

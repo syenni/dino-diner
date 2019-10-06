@@ -5,7 +5,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Class for the definitions of the Prehistoric PBJ
     /// </summary>
-    public class PrehistoricPBJ : Entree
+    public class PrehistoricPBJ : Entree, IMenuItem
     {
         //Private varialbes for options with the entree
         private bool peanutButter = true;
@@ -14,7 +14,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets the ingredients based on what options are indicated
         /// </summary>
-        public override List<string> Ingredients
+        public List<string> Ingredients
         {
             get
             {
@@ -27,12 +27,31 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
+        /// ToString override print the object
+        /// </summary>
+        /// <returns>The object in a string</returns>
+        public override string ToString()
+        {
+            return "Prehistoric PB&J";
+        }
+
+        /// <summary>
+        /// Property for the calories
+        /// </summary>
+        public uint Calories { get => 483; }
+
+        /// <summary>
+        /// Property for the price
+        /// </summary>
+        public double Price { get => 6.52; }
+
+        /// <summary>
         /// Default constructor for the price and calories
         /// </summary>
         public PrehistoricPBJ()
         {
-            this.Price = 6.52;
-            this.Calories = 483;
+            //this.Price = 6.52;
+            //this.Calories = 483;
         }
 
         /// <summary>

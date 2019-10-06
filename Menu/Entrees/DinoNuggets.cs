@@ -7,26 +7,38 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Class for the Dino Nugget entree
     /// </summary>
-    public class DinoNuggets : Entree
+    public class DinoNuggets : Entree, IMenuItem
     {
         /// <summary>
         /// Private uint to keep track of the amount of nuggets
         /// </summary>
         private uint nuggetCount = 6;
+        private uint calories = 59 * 6;
+        private double price = 4.25;
 
         /// <summary>
         /// Constructor to set calories and price
         /// </summary>
         public DinoNuggets()
         {
-            this.Calories = 59 * 6;
-            this.Price = 4.25;
+            //this.Calories = 59 * 6;
+            //this.Price = 4.25;
         }
+
+        /// <summary>
+        /// Property for the calories
+        /// </summary>
+        public uint Calories { get => calories; }
+
+        /// <summary>
+        /// Property for the price
+        /// </summary>
+        public double Price { get => price; }
 
         /// <summary>
         /// Gets the ingredients based on the indegredient options for this entree
         /// </summary>
-        public override List<string> Ingredients
+        public List<string> Ingredients
         {
             get
             {
@@ -45,10 +57,18 @@ namespace DinoDiner.Menu
         public void AddNugget()
         {
             nuggetCount++;
-            Price += 0.25;
-            Calories += 59;
+            price += 0.25;
+            calories += 59;
         }
 
+        /// <summary>
+        /// ToString override print the object
+        /// </summary>
+        /// <returns>The object in a string</returns>
+        public override string ToString()
+        {
+            return "Dino-Nuggets";
+        }
 
         /*private uint nuggetCount = 6;
 

@@ -4,17 +4,31 @@ using System.Text;
 
 namespace DinoDiner.Menu
 {
-    public class Water : Drink
+    /// <summary>
+    /// Class that holds the defintions of Water
+    /// </summary>
+    public class Water : Drink, IMenuItem
     {
         //Private backing variables
         private bool lemon = false;
         private bool ice = true;
         private Size size = Size.Small;
+        private uint calories = 0;
+        private double price = 0.10;
+
+        /// <summary>
+        /// Property for the calories
+        /// </summary>
+        public uint Calories { get => calories; }
+        /// <summary>
+        /// Property for the price
+        /// </summary>
+        public double Price { get => price; }
 
         /// <summary>
         /// Gets or sets the values for a size
         /// </summary>
-        public override Size Size
+        public Size Size
         {
             get
             {
@@ -23,8 +37,8 @@ namespace DinoDiner.Menu
             set
             {
                 size = value;
-                Price = 0.10;
-                Calories = 0;
+                price = 0.10;
+                calories = 0;
             }
         }
 
@@ -59,12 +73,21 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
+        /// ToString override print the object
+        /// </summary>
+        /// <returns>The object in a string</returns>
+        public override string ToString()
+        {
+            return size + " Water";
+        }
+
+        /// <summary>
         /// Constructor for default values
         /// </summary>
         public Water()
         {
-            this.Price = 0.10;
-            this.Calories = 0;
+            //this.Price = 0.10;
+            //this.Calories = 0;
         }
 
         /// <summary>

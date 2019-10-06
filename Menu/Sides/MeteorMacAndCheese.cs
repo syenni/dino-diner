@@ -4,10 +4,31 @@ using System.Text;
 
 namespace DinoDiner.Menu
 {
-    public class MeteorMacAndCheese : Side
+    /// <summary>
+    /// Class for the definitions of MeteorMacAndCheese
+    /// </summary>
+    public class MeteorMacAndCheese : Side, IMenuItem
     {
+        //Private backing varialbes
+        private uint calories = 420;
+        private double price = 0.99;
+
+        /// <summary>
+        /// Property for the calories
+        /// </summary>
+        public uint Calories { get => calories; }
+        /// <summary>
+        /// Property for the price
+        /// </summary>
+        public double Price { get => price; }
+        /// <summary>
+        /// Property for the ingredients
+        /// </summary>
+        public List<string> Ingredients { get => new List<string>() { "Macaroni Noodles", "Cheese Product", "Pork Sausage" }; }
+
+
         protected Size size;
-        public override Size Size
+        public Size Size
         {
             set
             {
@@ -15,16 +36,16 @@ namespace DinoDiner.Menu
                 switch (size)
                 {
                     case Size.Large:
-                        Price = 1.95;
-                        Calories = 520;
+                        price = 1.95;
+                        calories = 520;
                         break;
                     case Size.Medium:
-                        Price = 1.45;
-                        Calories = 490;
+                        price = 1.45;
+                        calories = 490;
                         break;
                     case Size.Small:
-                        Price = 0.99;
-                        Calories = 420;
+                        price = 0.99;
+                        calories = 420;
                         break;
                 }
             }
@@ -34,11 +55,20 @@ namespace DinoDiner.Menu
             }
         }
 
+        /// <summary>
+        /// ToString override print the object
+        /// </summary>
+        /// <returns>The object in a string</returns>
+        public override string ToString()
+        {
+            return size + " Meteor Mac and Cheese";
+        }
+
         public MeteorMacAndCheese()
         {
-            this.Price = 0.99;
-            this.Calories = 420;
-            this.Ingredients = new List<string>() { "Macaroni Noodles", "Cheese Product", "Pork Sausage" };
+            //this.Price = 0.99;
+            //this.Calories = 420;
+            //this.Ingredients = new List<string>() { "Macaroni Noodles", "Cheese Product", "Pork Sausage" };
         }
     }
 }

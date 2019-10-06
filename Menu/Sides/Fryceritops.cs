@@ -7,7 +7,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Class for the defintions of Fryceritops
     /// </summary>
-    public class Fryceritops : Side
+    public class Fryceritops : Side, IMenuItem
     {
         //public override List<string> Ingredients
         //{
@@ -16,13 +16,29 @@ namespace DinoDiner.Menu
         //        return new List<string>() { "Potato", "Salt", "Vegetable Oil" };
         //    }
         //}
+        //Private backing variables
+        private uint calories = 222;
+        private double price = 0.99;
+
+        /// <summary>
+        /// Property for the calories
+        /// </summary>
+        public uint Calories { get => calories; }
+        /// <summary>
+        /// Property for the price
+        /// </summary>
+        public double Price { get => price; }
+        /// <summary>
+        /// Property for the ingredients
+        /// </summary>
+        public List<string> Ingredients { get => new List<string>() { "Potato", "Salt", "Vegetable Oil" }; }
 
         /// <summary>
         /// Insstance of the object Size
         /// </summary>
         protected Size size;
 
-        public override Size Size
+        public Size Size
         {
             set
             {
@@ -32,16 +48,16 @@ namespace DinoDiner.Menu
                 switch (size)
                 {
                     case Size.Large:
-                        Price = 1.95;
-                        Calories = 480;
+                        price = 1.95;
+                        calories = 480;
                         break;
                     case Size.Medium:
-                        Price = 1.45;
-                        Calories = 365;
+                        price = 1.45;
+                        calories = 365;
                         break;
                     case Size.Small:
-                        Price = 0.99;
-                        Calories = 222;
+                        price = 0.99;
+                        calories = 222;
                         break;
                 }
             }
@@ -51,12 +67,21 @@ namespace DinoDiner.Menu
             }
         }
 
+        /// <summary>
+        /// ToString override print the object
+        /// </summary>
+        /// <returns>The object in a string</returns>
+        public override string ToString()
+        {
+            return size + " Friceritops";
+        }
+
         //Default constructor to set the price, calories, and ingredients
         public Fryceritops()
         {
-            this.Price = 0.99;
-            this.Calories = 222;
-            this.Ingredients = new List<string>() { "Potato", "Salt", "Vegetable Oil" }; //works because of the protected set in Side.cs
+            //this.Price = 0.99;
+            //this.Calories = 222;
+            //this.Ingredients = new List<string>() { "Potato", "Salt", "Vegetable Oil" }; //works because of the protected set in Side.cs
         }
 
 

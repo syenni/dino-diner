@@ -7,7 +7,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Class for the defintions of the TRex King Burger
     /// </summary>
-    public class TRexKingBurger : Entree
+    public class TRexKingBurger : Entree, IMenuItem
     {
         //Local private varialbes to indicate to include options for the entree
         private bool bun = true;
@@ -23,7 +23,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets the ingredients for the entree
         /// </summary>
-        public override List<string> Ingredients
+        public List<string> Ingredients
         {
             get
             {
@@ -57,9 +57,28 @@ namespace DinoDiner.Menu
         /// </summary>
         public TRexKingBurger()
         {
-            this.Price = 8.45;
-            this.Calories = 728;
+            //this.Price = 8.45;
+            //this.Calories = 728;
         }
+
+        /// <summary>
+        /// ToString override print the object
+        /// </summary>
+        /// <returns>The object in a string</returns>
+        public override string ToString()
+        {
+            return "T-Rex King Burger";
+        }
+
+        /// <summary>
+        /// Property for the calories
+        /// </summary>
+        public uint Calories { get => 728; }
+
+        /// <summary>
+        /// Property for the price
+        /// </summary>
+        public double Price { get => 8.45; }
 
         /// <summary>
         /// Method to hold the bun

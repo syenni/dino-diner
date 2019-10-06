@@ -7,7 +7,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Class for the defintions of the Veloci Wrap entree
     /// </summary>
-    public class VelociWrap : Entree
+    public class VelociWrap : Entree, IMenuItem
     {
         //Private variables indicating to include the options in the entree
         private bool dressing = true;
@@ -17,7 +17,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets the ingredients to include in the entree
         /// </summary>
-        public override List<string> Ingredients
+        public List<string> Ingredients
         {
             get
             {
@@ -33,13 +33,33 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
+        /// ToString override print the object
+        /// </summary>
+        /// <returns>The object in a string</returns>
+        public override string ToString()
+        {
+            return "Veloci-Wrap";
+        }
+
+        /// <summary>
         /// Default constructor for the price and calories
         /// </summary>
         public VelociWrap()
         {
-            this.Price = 6.86;
-            this.Calories = 356;
+            //this.Price = 6.86;
+            //this.Calories = 356;
         }
+
+        /// <summary>
+        /// Property for the calories
+        /// </summary>
+        public uint Calories { get => 356; }
+
+        /// <summary>
+        /// Property for the price
+        /// </summary>
+        public double Price { get => 6.86; }
+
         /// <summary>
         /// Method to hold the dressing
         /// </summary>

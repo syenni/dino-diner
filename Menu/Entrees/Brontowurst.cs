@@ -7,7 +7,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Class for the defintions of Brontowurst
     /// </summary>
-    public class Brontowurst : Entree
+    public class Brontowurst : Entree, IMenuItem
     {
         //Private variables for class
         private bool bun = true;
@@ -19,14 +19,23 @@ namespace DinoDiner.Menu
         /// </summary>
         public Brontowurst()
         {
-            this.Calories = 498;
-            this.Price = 5.36;
+            //this.Calories = 498;
+            //this.Price = 5.36;
         }
+
+        /// <summary>
+        /// Property for the calories
+        /// </summary>
+        public uint Calories { get => 498; }
+        /// <summary>
+        /// Property for the price
+        /// </summary>
+        public double Price { get => 5.36; }
 
         /// <summary>
         /// Gets the ingredients based on the indegredient options for this entree
         /// </summary>
-        public override List<string> Ingredients
+        public List<string> Ingredients
         {
             get
             {
@@ -63,6 +72,15 @@ namespace DinoDiner.Menu
         public void HoldOnion()
         {
             this.onions = false;
+        }
+
+        /// <summary>
+        /// ToString override print the object
+        /// </summary>
+        /// <returns>The object in a string</returns>
+        public override string ToString()
+        {
+            return "Brontowurst";
         }
     }
 }

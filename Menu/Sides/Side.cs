@@ -7,7 +7,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Abstract class for the defintions of Side
     /// </summary>
-    public abstract class Side
+    public  class Side
     {
         /// <summary>
         /// Gets and sets the price
@@ -27,7 +27,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets or sets the size
         /// </summary>
-        public abstract Size Size { get; set; }
+        public virtual Size Size { get; set; }
 
     }
 }

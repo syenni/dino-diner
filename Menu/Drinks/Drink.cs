@@ -8,7 +8,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Base class for the properties of the drinks
     /// </summary>
-    public abstract class Drink
+    public class Drink
     {
         /// <summary>
         /// Bascking varialbe for ice in a drink
@@ -28,7 +28,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets or sets the size
         /// </summary>
-        public abstract Size Size { get; set; }
+        public virtual Size Size { get; set; }
 
         /// <summary>
         /// Gets or sets the ingredients

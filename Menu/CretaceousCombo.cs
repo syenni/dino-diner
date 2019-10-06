@@ -2,32 +2,41 @@
 using System.Collections.Generic;
 using System.Text;
 using DinoDiner.Menu;
-using DinoDiner.Menu;
-using DinoDiner.Menu;
-using DinoDiner.Menu;
 
 namespace DinoDiner.Menu
 {
-    public class CretaciousCombo
+    /// <summary>
+    /// Class definitions of CretaceousCombo
+    /// </summary>
+    public class CretaceousCombo
     {
+        //Private backing variable
         private Size size = Size.Small;
 
+        //Property definitions for getting and setting
         public Entree Entree { get; set; }
         public Drink Drink { get; set; }
         public Side Side { get; set; }
 
         /// <summary>
-        /// Default constructor cannot be envoked because it is set to private
+        /// Default constructor that cannot be envoked because it is set to private
         /// </summary>
-        private CretaciousCombo() { }
+        private CretaceousCombo() { }
 
-        public CretaciousCombo(Entree entree)
+        /// <summary>
+        /// Constructor with an entree passed in
+        /// </summary>
+        /// <param name="entree">The entree for a combo</param>
+        public CretaceousCombo(Entree entree)
         {
             Entree = entree;
             Side = new Fryceritops();
             Drink = new Sodasaurus();
         }
 
+        /// <summary>
+        /// Gets or sets the size
+        /// </summary>
         public Size Size
         {
             get { return size; }
@@ -39,6 +48,9 @@ namespace DinoDiner.Menu
             }
         }
 
+        /// <summary>
+        /// Gets the price
+        /// </summary>
         public double Price
         {
             get
@@ -47,11 +59,18 @@ namespace DinoDiner.Menu
             }
         }
 
+        /// <summary>
+        /// ToString Method implementation to return the name of the combo
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
-            return $"";
+            return Entree + " Combo";
         }
 
+        /// <summary>
+        /// Gets the calories
+        /// </summary>
         public uint Calories
         {
             get
@@ -60,6 +79,9 @@ namespace DinoDiner.Menu
             }
         }
 
+        /// <summary>
+        /// Gets the ingredients
+        /// </summary>
         public List<string> Ingredients
         {
             get

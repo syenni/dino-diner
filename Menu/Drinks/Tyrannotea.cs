@@ -4,7 +4,10 @@ using System.Text;
 
 namespace DinoDiner.Menu
 {
-    public class Tyranntea : Drink
+    /// <summary>
+    /// Class that hold the definitions of Tyrannotea
+    /// </summary>
+    public class Tyrannotea : Drink, IMenuItem
     {
         /// <summary>
         /// Backing variables
@@ -13,7 +16,18 @@ namespace DinoDiner.Menu
         private bool lemon = false;
         private bool ice = true;
         private Size size = Size.Small;
-        
+        private uint calories = 8;
+        private double price = 0.99;
+
+        /// <summary>
+        /// Property for the calories
+        /// </summary>
+        public uint Calories { get => calories; }
+        /// <summary>
+        /// Property for the price
+        /// </summary>
+        public double Price { get => price; }
+
         /// <summary>
         /// Gets or sets the ice
         /// </summary>
@@ -23,7 +37,7 @@ namespace DinoDiner.Menu
             {
                 return ice;
             }
-        set
+            set
             {
                 ice = value;
             }
@@ -62,7 +76,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets or sets the values for size
         /// </summary>
-        public override Size Size
+        public Size Size
         {
             get
             {
@@ -74,37 +88,49 @@ namespace DinoDiner.Menu
                 switch (size)
                 {
                     case Size.Large:
-                        Price = 1.99;
+                        price = 1.99;
                         if (sweet)
-                            Calories = 64;
+                            calories = 64;
                         else
-                            Calories = 32;
+                            calories = 32;
                         break;
                     case Size.Medium:
-                        Price = 1.49;
+                        price = 1.49;
                         if (sweet)
-                            Calories = 32;
+                            calories = 32;
                         else
-                            Calories = 16;
+                            calories = 16;
                         break;
                     case Size.Small:
-                        Price = 0.99;
+                        price = 0.99;
                         if (sweet)
-                            Calories = 16;
+                            calories = 16;
                         else
-                            Calories = 8;
+                            calories = 8;
                         break;
                 }
             }
         }
 
         /// <summary>
+        /// ToString override print the object
+        /// </summary>
+        /// <returns>The object in a string</returns>
+        public override string ToString()
+        {
+            if (sweet)
+                return size + " Sweet Tyrannotea";
+            else
+                return size + " Tyrannotea";
+        }
+
+        /// <summary>
         /// Constructor for default values
         /// </summary>
-        public Tyranntea()
+        public Tyrannotea()
         {
-            this.Price = 0.99;
-            this.Calories = 8;
+            //this.Price = 0.99;
+            //this.Calories = 8;
         }
 
         /// <summary>
