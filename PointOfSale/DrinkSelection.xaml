@@ -1,0 +1,34 @@
+﻿<Page x:Class="PointOfSale.DrinkSelection"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PointOfSale"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="DrinkSelection">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition MaxHeight="40"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Grid.Column="0" TextBlock.FontSize="15pt" HorizontalAlignment="Center">Flavor</Label>
+        <Label Grid.Column="1" TextBlock.FontSize="15pt" HorizontalAlignment="Center">Flavor</Label>
+        <Label Grid.Column="2" TextBlock.FontSize="15pt" HorizontalAlignment="Center">Flavor</Label>
+        <Button Margin="10,10,5,5" Grid.Row="1" Grid.Column="0">Cherry</Button>
+        <Button Margin="5,10,5,5" Grid.Row="1" Grid.Column="1">Chocolate</Button>
+        <Button Margin="5,10,10,5" Grid.Row="1" Grid.Column="2">Cola</Button>
+        <Button Margin="10,5,5,5" Grid.Row="2" Grid.Column="0">Lime</Button>
+        <Button Margin="5,5,5,5" Grid.Row="2" Grid.Column="1">Orange</Button>
+        <Button Margin="5,5,10,5" Grid.Row="2" Grid.Column="3">Root Beer</Button>
+        <Button Margin="10,5,5,10" Grid.Row="3" Grid.Column="0">Vanilla</Button>
+    </Grid>
+</Page>
