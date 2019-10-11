@@ -25,9 +25,44 @@ namespace PointOfSale
             InitializeComponent(); //Runs the defintions in the xaml
         }
 
+        /// <summary>
+        /// Event handler for selecting combo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void SelectCombo(object sender, RoutedEventArgs args)
         {
             NavigationService.Navigate(new ComboSelection()); //Loads the next page in a frame
+        }
+
+        /// <summary>
+        /// Event handler for selecting entrees
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void SelectEntrees(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new EntreeSelection());
+        }
+
+        /// <summary>
+        /// Event handler for selecting sides
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void SelectSides(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new SideSelection());
+        }
+
+        /// <summary>
+        /// Event handler for selecting drinks
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void SelectDrinks(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new DrinkSelection());
         }
     }
 }

@@ -9,6 +9,22 @@
       Title="EntreeSelection">
 
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Margin="10,10,5,5" Grid.Row="0" Grid.Column="0">Brontowurst</Button>
+        <Button Margin="5,10,5,5" Grid.Row="0" Grid.Column="1">Dino-Nuggets</Button>
+        <Button Margin="5,10,10,5" Grid.Row="0" Grid.Column="2">Prehistoric PB&amp;J</Button>
+        <Button Margin="10,5,5,5" Grid.Row="1" Grid.Column="0">Pterodactyl Wings</Button>
+        <Button Margin="5,5,5,5" Grid.Row="1" Grid.Column="1">Steakosaurus Burger</Button>
+        <Button Margin="5,5,10,5" Grid.Row="1" Grid.Column="3">T-Rex Kingburger</Button>
+        <Button Margin="10,5,5,10" Grid.Row="3" Grid.Column="0">Veloci-Wrap</Button>
     </Grid>
 </Page>
