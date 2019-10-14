@@ -24,5 +24,65 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Event handler for selecting a flavo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void SelectSodasaurus(object sender, RoutedEventArgs args)
+        {
+            SweetDecafFlavor.IsEnabled = true;
+            HoldIce.IsEnabled = true;
+            AddLemon.IsEnabled = false;
+        }
+
+        /// <summary>
+        /// Event handler for selecting a flavo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void SelectFlavor(object sender, RoutedEventArgs args)
+        {
+
+            if (SweetDecafFlavor.IsEnabled && HoldIce.IsEnabled && !AddLemon.IsEnabled)
+                NavigationService.Navigate(new FlavorSelection());
+        }
+
+        /// <summary>
+        /// Event handler for selecting a Tyrannotea
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void SelectTyrannotea(object sender, RoutedEventArgs args)
+        {
+            SweetDecafFlavor.IsEnabled = true;
+            HoldIce.IsEnabled = true;
+            AddLemon.IsEnabled = true;
+        }
+
+        /// <summary>
+        /// Event handler for selecting a Coffee
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void SelectCoffee(object sender, RoutedEventArgs args)
+        {
+            SweetDecafFlavor.IsEnabled = true;
+            AddLemon.IsEnabled = false;
+            HoldIce.IsEnabled = false;
+        }
+
+        /// <summary>
+        /// Event handler for selecting a Tyrannotea
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void SelectWater(object sender, RoutedEventArgs args)
+        {
+            HoldIce.IsEnabled = true;
+            AddLemon.IsEnabled = true;
+            SweetDecafFlavor.IsEnabled = false;
+        }
     }
 }

@@ -16,21 +16,22 @@
                     <Setter Property="MinHeight" Value="180"/>
                 </Style>
             </WrapPanel.Resources>
-            <Button>
-                <StackPanel>
+            <Button Click="SelectBrontoworstCombo">
+                <!--<StackPanel>
                 <TextBlock>
                     <Image Source="Images/DinoDiner-01.png" Width="120"/>
                     <TextBlock>Brontowurst Combo</TextBlock>
                 </TextBlock>
-                </StackPanel>
+                </StackPanel>-->
+                Brontowurst Combo
             </Button>
-            <Button>
-                <Button.Background>
+            <Button Click="SelectDinoNuggetsCombo">
+                <!--<Button.Background>
                     <ImageBrush ImageSource="images/DinoDiner-02.png"/>
-                </Button.Background>
+                </Button.Background>-->
                 Dino-Nuggets Combo
             </Button>
-            <Button>
+            <Button Click="SelectSteakosaurusBurgerCombo">
                 <Button.Background>
                     <ImageBrush ImageSource="Images/DinoDiner-06.png"/>
                 </Button.Background>
@@ -42,10 +43,10 @@
                 </DockPanel>
                 
             </Button>
-            <Button>T-Rex King Burger Combo</Button>
-            <Button>Pterodactyl Wings Combo</Button>
-            <Button>Prehistoric PB&amp;J Combo</Button>
-            <Button>Veloci-Wrap Combo</Button>
+            <Button Click="SelectTRexKingburgerCombo">T-Rex King Burger Combo</Button>
+            <Button Click="SelectPterodactylWingsCombo">Pterodactyl Wings Combo</Button>
+            <Button Click="SelectPrehistoricPBJCombo">Prehistoric PB&amp;J Combo</Button>
+            <Button Click="SelectVelociWrapCombo">Veloci-Wrap Combo</Button>
         </WrapPanel>
     </Grid>
 </Page>
