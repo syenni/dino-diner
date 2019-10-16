@@ -25,6 +25,22 @@ namespace DinoDiner.Menu
         /// Property for the ingredients
         /// </summary>
         public List<string> Ingredients { get => new List<string> { "Water", "Natural Flavors", "Cane Sugar" }; }
+        /// <summary>
+        /// Gets the description of a sodasaurus
+        /// </summary>
+        public string Description { get => this.ToString(); }
+        /// <summary>
+        /// Gets the list of items for special instructions
+        /// </summary>
+        public string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!Ice) special.Add("Hold Ice");
+                return special.ToArray();
+            }
+        }
 
         /// <summary>
         /// Gets or sets the flavor
@@ -72,12 +88,13 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
-        /// ToString override print the object
+        /// Returns the drink identity string
         /// </summary>
         /// <returns>The object in a string</returns>
         public override string ToString()
         {
-            return size + " " + flavor + " Sodasaurus";
+            //return size + " " + flavor + " Sodasaurus";
+            return $"{Size} {Flavor} Sodasaurus";
         }
 
         /// <summary>

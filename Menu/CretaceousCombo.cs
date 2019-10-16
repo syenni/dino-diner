@@ -65,7 +65,7 @@ namespace DinoDiner.Menu
         /// <returns></returns>
         public override string ToString()
         {
-            return Entree + " Combo";
+            return $"{Entree} Combo";
         }
 
         /// <summary>
@@ -91,6 +91,25 @@ namespace DinoDiner.Menu
                 ingredients.AddRange(Side.Ingredients);
                 ingredients.AddRange(Drink.Ingredients);
                 return ingredients;
+            }
+        }
+
+        public string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        public string[] Special
+        {
+            get
+            {
+                List<string> ingredients = new List<string>();
+                ingredients.AddRange(Entree.Special); //need to implement IOrderItem on the base classes
+                ingredients.Add(Side.ToString()); //or Side.Description
+                ingredients.AddRange(Side.Special);
+                ingredients.Add(Drink.ToString());
+                ingredients.Add(Drink.Special);
+                return ingredients.ToArray();
             }
         }
     }
