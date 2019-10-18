@@ -34,7 +34,7 @@ namespace DinoDiner.Menu
         public List<string> Ingredients { get => new List<string>() { "Potato", "Salt", "Vegetable Oil" }; }
 
         /// <summary>
-        /// Insstance of the object Size
+        /// Instance of the object Size
         /// </summary>
         protected Size size;
 
@@ -73,7 +73,7 @@ namespace DinoDiner.Menu
         /// <returns>The object in a string</returns>
         public override string ToString()
         {
-            return size + " Friceritops";
+            return size + " Fryceritops";
         }
 
         //Default constructor to set the price, calories, and ingredients

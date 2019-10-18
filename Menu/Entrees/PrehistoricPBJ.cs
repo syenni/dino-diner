@@ -6,7 +6,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Class for the definitions of the Prehistoric PBJ
     /// </summary>
-    public class PrehistoricPBJ : Entree, IMenuItem, INotifyPropertyChanged//, IOrderItem
+    public class PrehistoricPBJ : Entree, IMenuItem, INotifyPropertyChanged, IOrderItem
     {
         //Private varialbes for options with the entree
         private bool peanutButter = true;
@@ -17,7 +17,10 @@ namespace DinoDiner.Menu
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
-        //Helper Function for notifying of property changes
+        /// <summary>
+        /// Helper Function for notifying of property changes
+        /// </summary>
+        /// <param name="propertyName"></param>
         private void NotifyOfPropertyChange(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// Class for the defintions of Brontowurst
     /// </summary>
-    public class Brontowurst : Entree, IMenuItem
+    public class Brontowurst : Entree, IMenuItem//, IOrderItem
     {
         //Private variables for class
         private bool bun = true;
@@ -24,18 +25,32 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
+        /// The PropertyChanged Event Handler; notifies of changes to the Price, Description, and Special properties
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// Helper Function for notifying of property changes
+        /// </summary>
+        /// <param name="propertyName"></param>
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
         /// Property for the calories
         /// </summary>
-        public uint Calories { get => 498; }
+        public override uint Calories { get => 498; }
         /// <summary>
         /// Property for the price
         /// </summary>
-        public double Price { get => 5.36; }
+        public override double Price { get => 5.36; }
 
         /// <summary>
         /// Gets the ingredients based on the indegredient options for this entree
         /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {

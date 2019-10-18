@@ -93,7 +93,7 @@ namespace DinoDiner.Menu
                 return ingredients;
             }
         }
-
+        
         public string Description
         {
             get { return this.ToString(); }
