@@ -36,6 +36,11 @@ namespace DinoDiner.Menu
         public List<string> Ingredients { get; protected set; }
 
         /// <summary>
+        /// Gets the special instructions
+        /// </summary>
+        public string[] Special { get; }
+
+        /// <summary>
         /// Method to hold ice in a drink
         /// </summary>
         public void HoldIce()

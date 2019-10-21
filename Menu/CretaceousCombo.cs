@@ -8,7 +8,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Class definitions of CretaceousCombo
     /// </summary>
-    public class CretaceousCombo
+    public class CretaceousCombo : IOrderItem
     {
         //Private backing variable
         private Size size = Size.Small;
@@ -108,7 +108,7 @@ namespace DinoDiner.Menu
                 ingredients.Add(Side.ToString()); //or Side.Description
                 ingredients.AddRange(Side.Special);
                 ingredients.Add(Drink.ToString());
-                ingredients.Add(Drink.Special);
+                ingredients.AddRange(Drink.Special);
                 return ingredients.ToArray();
             }
         }

@@ -29,5 +29,9 @@ namespace DinoDiner.Menu
         /// </summary>
         public virtual Size Size { get; set; }
 
+        /// <summary>
+        /// Gets the special instructions
+        /// </summary>
+        public string[] Special { get; }
     }
 }

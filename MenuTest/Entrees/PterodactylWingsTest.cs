@@ -30,5 +30,18 @@ namespace MenuTest.Entrees
             Assert.Equal<int>(2, ingredients.Count);
         }
 
+        [Fact]
+        public void HoldPeanutButterShouldNotifyOfSpecialPropertyChange()
+        {
+            PrehistoricPBJ pbj = new PrehistoricPBJ();
+            Assert.PropertyChanged(pbj, "Special", () => { pbj.HoldPeanutButter(); });
+        }
+
+        [Fact]
+        public void ShouldHaveCorrectDescription()
+        {
+            PterodactylWings pw = new PterodactylWings();
+            Assert.Equal("Pterodactyl Wings", pw.Description);
+        }
     }
 }

@@ -47,6 +47,7 @@ namespace MenuTest.Entrees
             Assert.DoesNotContain<string>("Jelly", pbj.Ingredients);
         }
 
+        //Milestone 5 tests below
         [Fact]
         public void HoldPeanutButterShouldNotifyOfSpecialPropertyChange()
         {
