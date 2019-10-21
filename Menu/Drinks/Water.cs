@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// Class that holds the defintions of Water
     /// </summary>
-    public class Water : Drink, IMenuItem
+    public class Water : Drink, IMenuItem, INotifyPropertyChanged, IOrderItem
     {
         //Private backing variables
         private bool lemon = false;
@@ -15,6 +16,42 @@ namespace DinoDiner.Menu
         private Size size = Size.Small;
         private uint calories = 0;
         private double price = 0.10;
+
+        /// <summary>
+        /// The PropertyChanged Event Handler; notifies of changes to the Price, Description, and Special properties
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// Helper Function for notifying of property changes
+        /// </summary>
+        /// <param name="propertyName"></param>
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
+        /// Gets the description
+        /// </summary>
+        public string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// Gets any special preparation instructions
+        /// </summary>
+        public string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (lemon) special.Add("Add Lemon");
+                if (!ice) special.Add("Hold Ice");
+                return special.ToArray();
+            }
+        }
 
         /// <summary>
         /// Property for the calories
@@ -111,6 +148,8 @@ namespace DinoDiner.Menu
         public void AddLemon()
         {
             lemon = true;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
 
         /// <summary>
@@ -119,6 +158,7 @@ namespace DinoDiner.Menu
         public void HoldIce()
         {
             ice = false;
+            NotifyOfPropertyChange("Special");
         }
     }
 }

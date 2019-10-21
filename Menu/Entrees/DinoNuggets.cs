@@ -1,13 +1,14 @@
 ﻿ using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// Class for the Dino Nugget entree
     /// </summary>
-    public class DinoNuggets : Entree, IMenuItem
+    public class DinoNuggets : Entree, IMenuItem, INotifyPropertyChanged, IOrderItem
     {
         /// <summary>
         /// Private uint to keep track of the amount of nuggets
@@ -23,6 +24,41 @@ namespace DinoDiner.Menu
         {
             //this.Calories = 59 * 6;
             //this.Price = 4.25;
+        }
+
+        /// <summary>
+        /// Gets the description
+        /// </summary>
+        public string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// Gets any special preparation instructions
+        /// </summary>
+        public string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (nuggetCount > 6) special.Add((nuggetCount - 6) + " Extra Nuggets");
+                return special.ToArray();
+            }
+        }
+
+        /// <summary>
+        /// The PropertyChanged Event Handler; notifies of changes to the Price, Description, and Special properties
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// Helper Function for notifying of property changes
+        /// </summary>
+        /// <param name="propertyName"></param>
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         /// <summary>
@@ -59,6 +95,7 @@ namespace DinoDiner.Menu
             nuggetCount++;
             price += 0.25;
             calories += 59;
+            NotifyOfPropertyChange("Special");
         }
 
         /// <summary>

@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public class JurassicJava : Drink, IMenuItem
+    public class JurassicJava : Drink, IMenuItem, INotifyPropertyChanged, IOrderItem
     {
         //Private backing variables
         private bool ice = false;
@@ -13,6 +14,43 @@ namespace DinoDiner.Menu
         private Size size = Size.Small;
         private uint calories = 2;
         private double price = 0.59;
+
+        /// <summary>
+        /// The PropertyChanged Event Handler; notifies of changes to the Price, Description, and Special properties
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// Helper Function for notifying of property changes
+        /// </summary>
+        /// <param name="propertyName"></param>
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
+        /// Gets the description
+        /// </summary>
+        public string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// Gets any special preparation instructions
+        /// </summary>
+        public string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (ice) special.Add("Make Iced");
+                if (roomForCream) special.Add("Save Room for Cream");
+                if (decaf) special.Add("Make Decaf");
+                return special.ToArray();
+            }
+        }
 
         /// <summary>
         /// Property for the calories
@@ -78,14 +116,20 @@ namespace DinoDiner.Menu
                     case Size.Large:
                         price = 1.49;
                         calories = 8;
+                        NotifyOfPropertyChange("Size");
+                        NotifyOfPropertyChange("Price");
                         break;
                     case Size.Medium:
                         price = 0.99;
                         calories = 4;
+                        NotifyOfPropertyChange("Size");
+                        NotifyOfPropertyChange("Price");
                         break;
                     case Size.Small:
                         price = 0.59;
                         calories = 2;
+                        NotifyOfPropertyChange("Size");
+                        NotifyOfPropertyChange("Price");
                         break;
                 }
             }
@@ -104,7 +148,7 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
-        /// Construcotr to set deafult values
+        /// Constructor to set deafult values
         /// </summary>
         public JurassicJava()
         {
@@ -119,6 +163,7 @@ namespace DinoDiner.Menu
         public void LeaveRoomForCream()
         {
             roomForCream = true;
+            NotifyOfPropertyChange("Special");
         }
 
         /// <summary>
@@ -127,6 +172,7 @@ namespace DinoDiner.Menu
         public void AddIce()
         {
             ice = true;
+            NotifyOfPropertyChange("Special");
         }
     }
 }

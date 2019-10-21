@@ -27,21 +27,6 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
-        /// Gets the ingredients based on what options are indicated
-        /// </summary>
-        public List<string> Ingredients
-        {
-            get
-            {
-                List<string> ingredients = new List<string>() { "Bread" };
-
-                if (peanutButter) ingredients.Add("Peanut Butter");
-                if (jelly) ingredients.Add("Jelly");
-                return ingredients;
-            }
-        }
-
-        /// <summary>
         /// Gets the description
         /// </summary>
         public string Description
@@ -60,6 +45,21 @@ namespace DinoDiner.Menu
                 if (!peanutButter) special.Add("Hold Peanut Butter");
                 if (!jelly) special.Add("Hold Jelly");
                 return special.ToArray();
+            }
+        }
+
+        /// <summary>
+        /// Gets the ingredients based on what options are indicated
+        /// </summary>
+        public List<string> Ingredients
+        {
+            get
+            {
+                List<string> ingredients = new List<string>() { "Bread" };
+
+                if (peanutButter) ingredients.Add("Peanut Butter");
+                if (jelly) ingredients.Add("Jelly");
+                return ingredients;
             }
         }
 
