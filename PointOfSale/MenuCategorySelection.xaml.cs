@@ -22,7 +22,7 @@ namespace PointOfSale
     {
         public MenuCategorySelection()
         {
-            InitializeComponent(); //Runs the defintions in the xaml
+            InitializeComponent(); //Runs the defintions in the xam
         }
 
         /// <summary>

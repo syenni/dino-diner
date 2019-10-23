@@ -14,7 +14,7 @@
     
     <DockPanel>
         <local:OrderControl x:Name="OrderList" DockPanel.Dock="Right" Width="200" Background="LightSteelBlue"/>
-        <Frame Name="OrderInterface" LoadCompleted="OnLoadCompleted" DataContextChanged="OnDataContextChanged" Source="MenuCategorySelection.xaml"/>
+        <Frame Name="OrderUI" LoadCompleted="OnLoadCompleted" DataContextChanged="OnDataContextChanged" Source="MenuCategorySelection.xaml"/>
         <!--<TextBlock DockPanel.Dock="Right" Width="200" TextAlignment="Center" Background="LightSteelBlue">// TODO: Order</TextBlock>
         <Frame Source="MenuCategorySelection.xaml"></Frame>-->
     </DockPanel>
