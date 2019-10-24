@@ -22,7 +22,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Label Grid.Row="0" TextBlock.FontSize="15pt" HorizontalAlignment="Center">Side</Label>
-            <Button Name="BtnAddFryceritops" Click="AddFrcyceritops" Margin="10,10,10,5" Grid.Row="1">Fryceritops</Button>
+            <Button Name="BtnAddFryceritops" Click="AddFryceritops" Margin="10,10,10,5" Grid.Row="1">Fryceritops</Button>
             <Button Name="BtnAddMeteorMacAndCheese" Click="AddMeteorMacAndCheese" Margin="10,5,10,5" Grid.Row="2">Meteor Mac &amp; Cheese</Button>
             <Button Name="BtnAddMezzorellaSticks" Click="AddMezzorellaSticks" Margin="10,5,10,5" Grid.Row="3">Mezzorella Sticks</Button>
             <Button Name="BtnAddTriceritops" Click="AddTriceritops" Margin="10,5,10,10" Grid.Row="4">Triceritots</Button>

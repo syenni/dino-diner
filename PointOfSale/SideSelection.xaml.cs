@@ -31,7 +31,7 @@ namespace PointOfSale
         public SideSelection(Side side)
         {
             InitializeComponent();
-            Side = side;
+            DataContext = side;
         }
 
         private void SelectSide(Side side)
@@ -77,12 +77,7 @@ namespace PointOfSale
             SelectSide(new MezzorellaSticks());
         }
 
-        public void AddFrcyceritops(object sender, RoutedEventArgs args)
-        {
-            if(DataContext is Order order)
-            {
-                order.Items.Add(new Fryceritops());
-            }
+       /*
 
             //OrderControl order = (Order)DataContext;
             //order.Items.Add(new Fryceritops());
@@ -93,7 +88,7 @@ namespace PointOfSale
             BtnPickSmall.IsEnabled = true;
             BtnPickMedium.IsEnabled = true;
             BtnPickLarge.IsEnabled = true;
-        }
+        }*/
 
         protected void PickLarge(object sender, RoutedEventArgs args)
         {

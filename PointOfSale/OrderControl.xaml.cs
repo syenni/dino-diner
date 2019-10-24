@@ -33,7 +33,7 @@ namespace PointOfSale
             if(OrderItems.SelectedItem is Side side)
             {
 
-                NavigationService.Navigate(new SideSelection());
+                NavigationService.Navigate(new SideSelection(side));
             }
         }
     }
