@@ -45,23 +45,36 @@ namespace PointOfSale
 
         private void SelectSize(DinoDiner.Menu.Size size)
         {
-            if(Side != null)
-                this.Side.Size = size;
+            if(DataContext is Order order)
+            {
+                if(CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Side side)
+                {
+                    side.Size = size;
+                }
+            }
+            
+            //if(Side != null)
+            //    this.Side.Size = size;
         }
 
-        protected void OnSelectFryceritops(object sender, RoutedEventArgs args)
+        protected void AddFryceritops(object sender, RoutedEventArgs args)
         {
             SelectSide(new Fryceritops());
         }
 
-        protected void OnSelectTriceritops(object sender, RoutedEventArgs args)
+        protected void AddTriceritops(object sender, RoutedEventArgs args)
         {
             SelectSide(new Triceritots());
         }
 
-        protected void OnSelectMeteorMacAndCheese(object sender, RoutedEventArgs args)
+        protected void AddMeteorMacAndCheese(object sender, RoutedEventArgs args)
         {
             SelectSide(new MeteorMacAndCheese());
+        }
+
+        public void AddMezzorellaSticks(object sender, RoutedEventArgs args)
+        {
+            SelectSide(new MezzorellaSticks());
         }
 
         public void AddFrcyceritops(object sender, RoutedEventArgs args)

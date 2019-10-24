@@ -13,7 +13,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Represents items sadaded to an order
         /// </summary>
-        public ObservableCollection<IOrderItem> Items { get; set; }
+        public ObservableCollection<IOrderItem> Items { get; set; } = new ObservableCollection<IOrderItem>();
         
         /// <summary>
         /// Calculates the total price from the prices of all order items
