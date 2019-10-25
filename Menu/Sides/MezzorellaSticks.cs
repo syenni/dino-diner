@@ -56,7 +56,7 @@ namespace DinoDiner.Menu
 
 
         protected Size size;
-        public Size Size
+        public override Size Size
         {
             set
             {

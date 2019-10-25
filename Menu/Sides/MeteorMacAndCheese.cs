@@ -56,7 +56,7 @@ namespace DinoDiner.Menu
 
 
         protected Size size;
-        public Size Size
+        public override Size Size
         {
             set
             {
@@ -67,16 +67,19 @@ namespace DinoDiner.Menu
                         price = 1.95;
                         calories = 520;
                         NotifyOfPropertyChange("Size");
+                        NotifyOfPropertyChange("Description");
                         break;
                     case Size.Medium:
                         price = 1.45;
                         calories = 490;
                         NotifyOfPropertyChange("Size");
+                        NotifyOfPropertyChange("Description");
                         break;
                     case Size.Small:
                         price = 0.99;
                         calories = 420;
                         NotifyOfPropertyChange("Size");
+                        NotifyOfPropertyChange("Description");
                         break;
                 }
             }

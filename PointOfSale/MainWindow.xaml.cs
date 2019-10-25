@@ -39,7 +39,7 @@ namespace PointOfSale
 
         private void BindDataContextToPage()
         {
-            if (OrderUI.DataContext is FrameworkElement element)
+            if (OrderUI.Content is FrameworkElement element)
             {
                 element.DataContext = OrderUI.DataContext;
             }

@@ -31,30 +31,23 @@ namespace PointOfSale
         public SideSelection(Side side)
         {
             InitializeComponent();
-            DataContext = side;
+            Side = side;
         }
 
         private void SelectSide(Side side)
         {
             if (DataContext is Order order)
             {
-                order.Items.Add(side);
+                order.Add(side);
+
                 this.Side = side;
             }
         }
 
         private void SelectSize(DinoDiner.Menu.Size size)
         {
-            if(DataContext is Order order)
-            {
-                if(CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Side side)
-                {
-                    side.Size = size;
-                }
-            }
-            
-            //if(Side != null)
-            //    this.Side.Size = size;
+            if(Side != null)
+                this.Side.Size = size;
         }
 
         protected void AddFryceritops(object sender, RoutedEventArgs args)
