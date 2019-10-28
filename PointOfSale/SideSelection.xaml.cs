@@ -73,7 +73,7 @@ namespace PointOfSale
        /*
 
             //OrderControl order = (Order)DataContext;
-            //order.Items.Add(new Fryceritops());
+            //order.Add(new Fryceritops());
             BtnAddFryceritops.IsEnabled = false;
             BtnAddTriceritops.IsEnabled = false;
             BtnAddMezzorellaSticks.IsEnabled = false;

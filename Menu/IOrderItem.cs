@@ -10,7 +10,13 @@ namespace DinoDiner.Menu
     /// </summary>
     public interface IOrderItem : INotifyPropertyChanged
     {
+        /// <summary>
+        /// Gets the price of an item
+        /// </summary>
         double Price { get; }
+        /// <summary>
+        /// Gets a description
+        /// </summary>
         string Description { get; }
         string[] Special { get; }
     }

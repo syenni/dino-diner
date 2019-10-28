@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
+using System.ComponentModel;
 
 namespace PointOfSale
 {
@@ -23,6 +25,18 @@ namespace PointOfSale
         public EntreeSelection()
         {
             InitializeComponent();
+        }
+
+        private void OnAddPreHistoricPBJ(object sender, RoutedEventArgs args)
+        {
+            if(DataContext is Order order)
+            {
+                PrehistoricPBJ pbj = new PrehistoricPBJ();
+                order.Add(pbj);
+                NavigationService.Navigate(new CustomizePrehistoricPBJ(pbj));
+            }
+
+            
         }
     }
 }
