@@ -49,8 +49,8 @@
             </Grid.RowDefinitions>
             <Label Grid.Row="0" TextBlock.FontSize="15pt" HorizontalAlignment="Center">Special</Label>
             <Button x:Name="SweetDecafFlavor" IsEnabled="False" Click="SelectFlavor" Margin="10,10,10,5" Grid.Row="1">Sweet/Decaf/Flavor</Button>
-            <Button x:Name="AddLemon" IsEnabled="False" Margin="10,5,10,5" Grid.Row="2">Add Lemon</Button>
-            <Button x:Name="HoldIce" IsEnabled="False" Margin="10,5,10,10" Grid.Row="3">Hold Ice</Button>
+            <Button x:Name="AddLemon" IsEnabled="False" Click="SelectAddLemon" Margin="10,5,10,5" Grid.Row="2">Add Lemon</Button>
+            <Button x:Name="HoldIce" IsEnabled="False" Click="SelectHoldIce" Margin="10,5,10,10" Grid.Row="3">Hold Ice</Button>
         </Grid>
     </Grid>
 </Page>

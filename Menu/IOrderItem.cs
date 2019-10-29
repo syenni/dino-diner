@@ -18,6 +18,9 @@ namespace DinoDiner.Menu
         /// Gets a description
         /// </summary>
         string Description { get; }
+        /// <summary>
+        /// Gest the special
+        /// </summary>
         string[] Special { get; }
     }
 }

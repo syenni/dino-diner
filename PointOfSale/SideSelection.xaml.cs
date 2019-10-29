@@ -21,25 +21,41 @@ namespace PointOfSale
     /// </summary>
     public partial class SideSelection : Page
     {
+        /// <summary>
+        /// Property of a Side
+        /// </summary>
         public Side Side { get; set; }
 
+        /// <summary>
+        /// Default constructor for SideSelction
+        /// </summary>
         public SideSelection()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Constructor for a passed in side
+        /// </summary>
+        /// <param name="side"></param>
         public SideSelection(Side side)
         {
             InitializeComponent();
             Side = side;
+            BtnPickLarge.IsEnabled = true;
+            BtnPickMedium.IsEnabled = true;
+            BtnPickSmall.IsEnabled = true;
         }
 
+        /// <summary>
+        /// Method to add a side to order
+        /// </summary>
+        /// <param name="side"></param>
         private void SelectSide(Side side)
         {
             if (DataContext is Order order)
             {
                 order.Add(side);
-
                 this.Side = side;
             }
         }

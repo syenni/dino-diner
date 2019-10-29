@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 using DinoDiner.Menu;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// Base class for the properties of the drinks
     /// </summary>
-    public class Drink
+    public class Drink : IOrderItem
     {
         /// <summary>
         /// Bascking varialbe for ice in a drink
@@ -39,6 +40,10 @@ namespace DinoDiner.Menu
         /// Gets the special instructions
         /// </summary>
         public string[] Special { get; }
+
+        public string Description => Size + this.ToString();
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// Method to hold ice in a drink

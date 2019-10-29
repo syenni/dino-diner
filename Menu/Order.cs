@@ -50,7 +50,7 @@ namespace DinoDiner.Menu
         {
             items.Add(item);
             item.PropertyChanged += OnPropertyChanged;
-            NotifyAllPropertyChanged()
+            NotifyAllPropertyChanged();
             //NotifyOfPropertyChanged("Items");
             //NotifyOfPropertyChanged("SubTotalCost");
             //NotifyOfPropertyChanged("SalesTaxCost");
