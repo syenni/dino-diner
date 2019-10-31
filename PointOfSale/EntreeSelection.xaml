@@ -19,12 +19,12 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button Margin="10,10,5,5" Grid.Row="0" Grid.Column="0">Brontowurst</Button>
-        <Button Margin="5,10,5,5" Grid.Row="0" Grid.Column="1">Dino-Nuggets</Button>
-        <Button Margin="5,10,10,5" Grid.Row="0" Grid.Column="2" Click="OnAddPBJ">Prehistoric PB&amp;J</Button>
-        <Button Margin="10,5,5,5" Grid.Row="1" Grid.Column="0">Pterodactyl Wings</Button>
-        <Button Margin="5,5,5,5" Grid.Row="1" Grid.Column="1">Steakosaurus Burger</Button>
-        <Button Margin="5,5,10,5" Grid.Row="1" Grid.Column="3">T-Rex Kingburger</Button>
-        <Button Margin="10,5,5,10" Grid.Row="3" Grid.Column="0">Veloci-Wrap</Button>
+        <Button x:Name="Brontowurst" Click="SelectBrontowurst" Margin="10,10,5,5" Grid.Row="0" Grid.Column="0">Brontowurst</Button>
+        <Button x:Name="DinoNuggets" Click="SelectDinoNuggets" Margin="5,10,5,5" Grid.Row="0" Grid.Column="1">Dino-Nuggets</Button>
+        <Button x:Name="PBJ" Click="SelectAddPBJ" Margin="5,10,10,5" Grid.Row="0" Grid.Column="2">Prehistoric PB&amp;J</Button>
+        <Button x:Name="PterodactylWings" Click="SelectPterodactylWings" Margin="10,5,5,5" Grid.Row="1" Grid.Column="0">Pterodactyl Wings</Button>
+        <Button x:Name="SteakosaurusBurger" Click="SelectSteakosaurusBurger" Margin="5,5,5,5" Grid.Row="1" Grid.Column="1">Steakosaurus Burger</Button>
+        <Button x:Name="TRexKingburger" Click="SelectTRexKingburger" Margin="5,5,10,5" Grid.Row="1" Grid.Column="3">T-Rex Kingburger</Button>
+        <Button x:Name="VelociWrap" Click="SelectVelociWrap" Margin="10,5,5,10" Grid.Row="3" Grid.Column="0">Veloci-Wrap</Button>
     </Grid>
 </Page>

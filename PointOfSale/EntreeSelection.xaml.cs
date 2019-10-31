@@ -22,12 +22,35 @@ namespace PointOfSale
     /// </summary>
     public partial class EntreeSelection : Page
     {
+        /// <summary>
+        /// Initializes the page
+        /// </summary>
         public EntreeSelection()
         {
             InitializeComponent();
         }
+        
+        private void SelectBrontowurst(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                Brontowurst brontowurst = new Brontowurst();
+                order.Add(brontowurst);
+            }
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
 
-        private void OnAddPreHistoricPBJ(object sender, RoutedEventArgs args)
+        private void SelectDinoNuggets(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                DinoNuggets dn = new DinoNuggets();
+                order.Add(dn);
+            }
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
+
+        private void SelectAddPBJ(object sender, RoutedEventArgs args)
         {
             if(DataContext is Order order)
             {
@@ -37,5 +60,17 @@ namespace PointOfSale
             }
             NavigationService.Navigate(new MenuCategorySelection());
         }
+
+        private void SelectPterodactylWings(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                PterodactylWings pw = new PterodactylWings();
+                order.Add(pw);
+            }
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
+
+
     }
 }
