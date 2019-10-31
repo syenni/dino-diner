@@ -9,10 +9,19 @@ namespace DinoDiner.Menu
     /// </summary>
     public interface IMenuItem
     {
+        /// <summary>
+        /// Gets the Price
+        /// </summary>
         double Price { get; }
 
+        /// <summary>
+        /// Gets the Calories
+        /// </summary>
         uint Calories { get; }
 
+        /// <summary>
+        /// Gets the Ingredients
+        /// </summary>
         List<string> Ingredients { get; }
     }
 }

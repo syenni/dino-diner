@@ -16,31 +16,9 @@ namespace DinoDiner.Menu
         private bool cheese = true;
 
         /// <summary>
-        /// The PropertyChanged Event Handler; notifies of changes to the Price, Description, and Special properties
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        /// <summary>
-        /// Helper Function for notifying of property changes
-        /// </summary>
-        /// <param name="propertyName"></param>
-        private void NotifyOfPropertyChange(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        /// <summary>
-        /// Gets the description
-        /// </summary>
-        public string Description
-        {
-            get { return this.ToString(); }
-        }
-
-        /// <summary>
         /// Gets any special preparation instructions
         /// </summary>
-        public string[] Special
+        public override string[] Special
         {
             get
             {
@@ -55,7 +33,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets the ingredients to include in the entree
         /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {
@@ -84,19 +62,9 @@ namespace DinoDiner.Menu
         /// </summary>
         public VelociWrap()
         {
-            //this.Price = 6.86;
-            //this.Calories = 356;
+            this.Price = 6.86;
+            this.Calories = 356;
         }
-
-        /// <summary>
-        /// Property for the calories
-        /// </summary>
-        public uint Calories { get => 356; }
-
-        /// <summary>
-        /// Property for the price
-        /// </summary>
-        public double Price { get => 6.86; }
 
         /// <summary>
         /// Method to hold the dressing

@@ -20,28 +20,15 @@ namespace DinoDiner.Menu
         /// </summary>
         public Brontowurst()
         {
-            //this.Calories = 498;
-            //this.Price = 5.36;
+            this.Calories = 498;
+            this.Price = 5.36;
         }
 
-        /// <summary>
-        /// The PropertyChanged Event Handler; notifies of changes to the Price, Description, and Special properties
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        /// <summary>
-        /// Helper Function for notifying of property changes
-        /// </summary>
-        /// <param name="propertyName"></param>
-        private void NotifyOfPropertyChange(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
 
         /// <summary>
         /// Gets the description
         /// </summary>
-        public string Description
+        public override string Description
         {
             get { return this.ToString(); }
         }
@@ -49,7 +36,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets any special preparation instructions
         /// </summary>
-        public string[] Special
+        public override string[] Special
         {
             get
             {
@@ -60,15 +47,6 @@ namespace DinoDiner.Menu
                 return special.ToArray();
             }
         }
-
-        /// <summary>
-        /// Property for the calories
-        /// </summary>
-        public override uint Calories { get => 498; }
-        /// <summary>
-        /// Property for the price
-        /// </summary>
-        public override double Price { get => 5.36; }
 
         /// <summary>
         /// Gets the ingredients based on the indegredient options for this entree

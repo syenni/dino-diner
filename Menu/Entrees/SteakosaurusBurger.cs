@@ -17,31 +17,9 @@ namespace DinoDiner.Menu
         private bool mustard = true;
 
         /// <summary>
-        /// The PropertyChanged Event Handler; notifies of changes to the Price, Description, and Special properties
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        /// <summary>
-        /// Helper Function for notifying of property changes
-        /// </summary>
-        /// <param name="propertyName"></param>
-        private void NotifyOfPropertyChange(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        /// <summary>
-        /// Gets the description
-        /// </summary>
-        public string Description
-        {
-            get { return this.ToString(); }
-        }
-
-        /// <summary>
         /// Gets any special preparation instructions
         /// </summary>
-        public string[] Special
+        public override string[] Special
         {
             get
             {
@@ -57,7 +35,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets the ingredients to use for this entree
         /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {
@@ -75,32 +53,13 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
-        /// ToString override print the object
-        /// </summary>
-        /// <returns>The object in a string</returns>
-        public override string ToString()
-        {
-            return "Steakosaurus Burger";
-        }
-
-        /// <summary>
         /// Default constructor to set price and calories
         /// </summary>
         public SteakosaurusBurger()
         {
-            //this.Price = 5.15;
-            //this.Calories = 621;
+            this.Price = 5.15;
+            this.Calories = 621;
         }
-
-        /// <summary>
-        /// Property for the calories
-        /// </summary>
-        public uint Calories { get => 621; }
-
-        /// <summary>
-        /// Property for the price
-        /// </summary>
-        public double Price { get => 5.15; }
 
         /// <summary>
         /// Method to check and see if the bun is to be included with the entree

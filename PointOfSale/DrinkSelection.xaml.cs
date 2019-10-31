@@ -26,7 +26,7 @@ namespace PointOfSale
         /// </summary>
         public Drink Drink { get; set; }
 
-        Drink drink;
+        //Private backing variable for flavor
         bool flavor = false;
 
         /// <summary>
@@ -68,19 +68,6 @@ namespace PointOfSale
             }
         }
 
-        /// <summary>
-        /// Event handler for selecting a flavor
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="args"></param>
-        private void SelectSodasaurus(object sender, RoutedEventArgs args)
-        {
-            SweetDecafFlavor.IsEnabled = true;
-            HoldIce.IsEnabled = true;
-            AddLemon.IsEnabled = false;
-        }
-
-
         private void SelectSize(DinoDiner.Menu.Size size)
         {
             if (Drink != null)
@@ -88,25 +75,19 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Event handler for selecting the sweet/decaf/flavor button
+        /// Event handler for selecting a flavor
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
-        private void SelectSweetDecafFlavor(object sender, RoutedEventArgs args)
+        private void SelectSodasaurus(object sender, RoutedEventArgs args)
         {
-
-            if (SweetDecafFlavor.IsEnabled && HoldIce.IsEnabled && !AddLemon.IsEnabled)
-                NavigationService.Navigate(new FlavorSelection());
-            else if (Drink is Tyrannotea tea)
-            {
-                tea.Sweet = true;
-                SweetDecafFlavor.Content = "Make Sweet";
-            }
-            else if (Drink is JurassicJava coffee)
-            {
-                coffee.Decaf = true;
-                SweetDecafFlavor.Content = "Decaf";
-            }
+            flavor = true;
+            SweetDecafFlavor.Content = "Flavor";
+            SweetDecafFlavor.IsEnabled = true;
+            HoldIce.IsEnabled = true;
+            HoldIce.Content = "Hold Ice";
+            AddLemon.IsEnabled = false;
+            SelectDrink(new Sodasaurus());
         }
 
         /// <summary>
@@ -132,11 +113,12 @@ namespace PointOfSale
         private void SelectCoffee(object sender, RoutedEventArgs args)
         {
             flavor = false;
+            SelectDrink(new JurassicJava());
             SweetDecafFlavor.Content = "Decaf";
             SweetDecafFlavor.IsEnabled = true;
             AddLemon.IsEnabled = false;
-            //HoldIce.IsEnabled = true;
-            HoldIce.Content = "Hold Ice";
+            HoldIce.IsEnabled = true;
+            HoldIce.Content = "Add Ice";
         }
 
         /// <summary>
@@ -146,9 +128,104 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void SelectWater(object sender, RoutedEventArgs args)
         {
+            flavor = false;
+            SelectDrink(new Water());
             HoldIce.IsEnabled = true;
+            HoldIce.Content = "Hold Ice";
             AddLemon.IsEnabled = true;
             SweetDecafFlavor.IsEnabled = false;
+        }
+
+        /// <summary>
+        /// Event handler for the Large button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public void SelectLarge(object sender, RoutedEventArgs args)
+        {
+            SelectSize(DinoDiner.Menu.Size.Large);
+        }
+
+        /// <summary>
+        /// Event handler for the Medium button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public void  SelectMedium(object sender, RoutedEventArgs args)
+        {
+            SelectSize(DinoDiner.Menu.Size.Medium);
+        }
+
+        /// <summary>
+        /// Event handler for the Small button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public void SelectSmall(object sender, RoutedEventArgs args)
+        {
+            SelectSize(DinoDiner.Menu.Size.Small);
+        }
+
+        /// <summary>
+        /// Event handler for selecting the sweet/decaf/flavor button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void SelectSweetDecafFlavor(object sender, RoutedEventArgs args)
+        {
+
+            if (SweetDecafFlavor.IsEnabled && HoldIce.IsEnabled && !AddLemon.IsEnabled)
+                NavigationService.Navigate(new FlavorSelection());
+            else if (Drink is Tyrannotea tea)
+            {
+                tea.Sweet = true;
+                SweetDecafFlavor.Content = "Make Sweet";
+            }
+            else if (Drink is JurassicJava coffee)
+            {
+                coffee.Decaf = true;
+                SweetDecafFlavor.Content = "Decaf";
+            }
+        }
+
+        /// <summary>
+        /// Event handler for selecting the Add Lemon button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void SelectAddLemon(object sender, RoutedEventArgs args)
+        {
+            if (Drink is Tyrannotea tea)
+                tea.Lemon = true;
+            else if (Drink is Water water)
+                water.Lemon = true;
+        }
+
+        /// <summary>
+        /// Event handler for the Hold Ice button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void SelectHoldIce(object sender, RoutedEventArgs args)
+        {
+            if (Drink is Drink drink)
+            {
+                Drink.HoldIce();
+                //Drink.HoldIce = true;
+            }
+            else if (Drink is JurassicJava coffee)
+                coffee.Ice = true;
+        }
+
+        /// <summary>
+        /// Event handler for the Done button
+        ///     Navigates back to the main page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public void SelectDone(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new MenuCategorySelection());
         }
     }
 }

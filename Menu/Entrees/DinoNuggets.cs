@@ -29,7 +29,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets the description
         /// </summary>
-        public string Description
+        public override string Description
         {
             get { return this.ToString(); }
         }
@@ -37,7 +37,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets any special preparation instructions
         /// </summary>
-        public string[] Special
+        public override string[] Special
         {
             get
             {
@@ -48,33 +48,19 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
-        /// The PropertyChanged Event Handler; notifies of changes to the Price, Description, and Special properties
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        /// <summary>
-        /// Helper Function for notifying of property changes
-        /// </summary>
-        /// <param name="propertyName"></param>
-        private void NotifyOfPropertyChange(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        /// <summary>
         /// Property for the calories
         /// </summary>
-        public uint Calories { get => calories; }
+        public override uint Calories { get => calories; }
 
         /// <summary>
         /// Property for the price
         /// </summary>
-        public double Price { get => price; }
+        public override double Price { get => price; }
 
         /// <summary>
         /// Gets the ingredients based on the indegredient options for this entree
         /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {

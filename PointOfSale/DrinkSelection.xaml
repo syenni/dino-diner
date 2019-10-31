@@ -9,6 +9,10 @@
       Title="DrinkSelection">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition MaxHeight="50"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -28,6 +32,9 @@
             <Button Click="SelectCoffee" Margin="10,5,10,5" Grid.Row="3">Jurrasic Java</Button>
             <Button Click="SelectWater" Margin="10,5,10,10" Grid.Row="4">Water</Button>
         </Grid>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Button Click="SelectDone" x:Name="Done" Margin="20,0,20,5">Done</Button>
+        </Grid>
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition MaxHeight="40"/>
@@ -36,9 +43,9 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Label Grid.Row="0" TextBlock.FontSize="15pt" HorizontalAlignment="Center">Size</Label>
-            <Button Margin="10,10,10,5" Grid.Row="1">Small</Button>
-            <Button Margin="10,5,10,5" Grid.Row="2">Medium</Button>
-            <Button Margin="10,5,10,10" Grid.Row="3">Large</Button>
+            <Button x:Name="Small" Click="SelectSmall" IsEnabled="False" Margin="10,10,10,5" Grid.Row="1">Small</Button>
+            <Button x:Name="Medium" Click="SelectMedium" IsEnabled="False" Margin="10,5,10,5" Grid.Row="2">Medium</Button>
+            <Button x:Name="Large" Click="SelectLarge" IsEnabled="False" Margin="10,5,10,10" Grid.Row="3">Large</Button>
         </Grid>
         <Grid Grid.Column="2">
             <Grid.RowDefinitions>

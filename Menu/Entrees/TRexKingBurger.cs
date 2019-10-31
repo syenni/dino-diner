@@ -22,31 +22,9 @@ namespace DinoDiner.Menu
         private int pattieCount = 3;
 
         /// <summary>
-        /// The PropertyChanged Event Handler; notifies of changes to the Price, Description, and Special properties
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        /// <summary>
-        /// Helper Function for notifying of property changes
-        /// </summary>
-        /// <param name="propertyName"></param>
-        private void NotifyOfPropertyChange(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        /// <summary>
-        /// Gets the description
-        /// </summary>
-        public string Description
-        {
-            get { return this.ToString(); }
-        }
-
-        /// <summary>
         /// Gets any special preparation instructions
         /// </summary>
-        public string[] Special
+        public override string[] Special
         {
             get
             {
@@ -66,7 +44,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets the ingredients for the entree
         /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {
@@ -100,8 +78,8 @@ namespace DinoDiner.Menu
         /// </summary>
         public TRexKingBurger()
         {
-            //this.Price = 8.45;
-            //this.Calories = 728;
+            this.Price = 8.45;
+            this.Calories = 728;
         }
 
         /// <summary>
@@ -112,16 +90,6 @@ namespace DinoDiner.Menu
         {
             return "T-Rex King Burger";
         }
-
-        /// <summary>
-        /// Property for the calories
-        /// </summary>
-        public uint Calories { get => 728; }
-
-        /// <summary>
-        /// Property for the price
-        /// </summary>
-        public double Price { get => 8.45; }
 
         /// <summary>
         /// Method to hold the bun

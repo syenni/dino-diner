@@ -5,7 +5,7 @@ using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public class Entree : IOrderItem
+    public class Entree : IOrderItem, IMenuItem, INotifyPropertyChanged
     {
         /// <summary>
         /// Gets and sets the price
@@ -25,10 +25,39 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets the special instructions
         /// </summary>
-        public string[] Special { get; }
+        public virtual string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                special.Add(new Brontowurst().Special.ToString());
+                special.Add(new DinoNuggets().Special.ToString());
+                special.Add(new PrehistoricPBJ().Special.ToString());
+                special.Add(new PterodactylWings().Special.ToString());
+                special.Add(new SteakosaurusBurger().Special.ToString());
+                special.Add(new TRexKingBurger().Special.ToString());
+                special.Add(new VelociWrap().Special.ToString());
+                return special.ToArray();
+            }
+        }
 
-        public string Description => this.ToString();
+        /// <summary>
+        /// Gets the description
+        /// </summary>
+        public virtual string Description => this.ToString();
 
+        /// <summary>
+        /// Notifies of changes made to the properties
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// Notifies is a property changes
+        /// </summary>
+        /// <param name="name"></param>
+        public void NotifyOfPropertyChange(string name)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
     }
 }

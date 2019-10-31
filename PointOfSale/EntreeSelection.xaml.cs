@@ -35,8 +35,7 @@ namespace PointOfSale
                 order.Add(pbj);
                 NavigationService.Navigate(new CustomizePrehistoricPBJ(pbj));
             }
-
-            
+            NavigationService.Navigate(new MenuCategorySelection());
         }
     }
 }

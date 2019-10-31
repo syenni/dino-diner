@@ -13,7 +13,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets the ingredients
         /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {
@@ -23,31 +23,12 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
-        /// The PropertyChanged Event Handler; notifies of changes to the Price, Description, and Special properties
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        /// <summary>
-        /// Helper Function for notifying of property changes
-        /// </summary>
-        /// <param name="propertyName"></param>
-        private void NotifyOfPropertyChange(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        /// <summary>
         /// Gets the description
         /// </summary>
-        public string Description
+        public override string Description
         {
             get { return this.ToString(); }
         }
-
-        /// <summary>
-        /// Gets any special preparation instructions
-        /// </summary>
-        public string[] Special { get; }
 
         /// <summary>
         /// ToString override print the object
@@ -63,18 +44,8 @@ namespace DinoDiner.Menu
         /// </summary>
         public PterodactylWings()
         {
-            //this.Price = 7.21;
-            //this.Calories = 318;
+            this.Price = 7.21;
+            this.Calories = 318;
         }
-
-        /// <summary>
-        /// Property for the calories
-        /// </summary>
-        public uint Calories { get => 318; }
-
-        /// <summary>
-        /// Property for the price
-        /// </summary>
-        public double Price { get => 7.21; }
     }
 }
