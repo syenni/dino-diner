@@ -27,6 +27,15 @@ namespace DinoDiner.Menu
         //}
 
         /// <summary>
+        /// Default constructor for the price and calories
+        /// </summary>
+        public PrehistoricPBJ()
+        {
+            this.Price = 6.52;
+            this.Calories = 483;
+        }
+
+        /// <summary>
         /// Gets the description
         /// </summary>
         public override string Description
@@ -66,19 +75,10 @@ namespace DinoDiner.Menu
         /// ToString override print the object
         /// </summary>
         /// <returns>The object in a string</returns>
-        public override string ToString()
-        {
-            return "Prehistoric PB&J";
-        }
-
-        /// <summary>
-        /// Default constructor for the price and calories
-        /// </summary>
-        public PrehistoricPBJ()
-        {
-            this.Price = 6.52;
-            this.Calories = 483;
-        }
+        //public override string ToString()
+        //{
+        //    return "Prehistoric PB&J";
+        //}
 
         /// <summary>
         /// Method to hold peanut butter or not on the entree

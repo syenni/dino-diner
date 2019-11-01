@@ -6,6 +6,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
+
 
 namespace PointOfSale
 {
@@ -16,6 +18,7 @@ namespace PointOfSale
     {
         //PBJ object
         PrehistoricPBJ pbj;
+        //DinoDiner.Menu.PrehistoricPBJ pbj;
 
         /// <summary>
         /// Constrctor to intitialize and set the pbj
