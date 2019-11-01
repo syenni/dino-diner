@@ -30,6 +30,11 @@ namespace PointOfSale
             InitializeComponent();
         }
         
+        /// <summary>
+        /// Event handler for Brontowurst button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void SelectBrontowurst(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -40,6 +45,11 @@ namespace PointOfSale
             NavigationService.Navigate(new MenuCategorySelection());
         }
 
+        /// <summary>
+        /// Event handler for Dino Nuggets button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void SelectDinoNuggets(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -50,6 +60,11 @@ namespace PointOfSale
             NavigationService.Navigate(new MenuCategorySelection());
         }
 
+        /// <summary>
+        /// Event handler for Prehistoric PB&J button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void SelectAddPBJ(object sender, RoutedEventArgs args)
         {
             if(DataContext is Order order)
@@ -61,6 +76,11 @@ namespace PointOfSale
             NavigationService.Navigate(new MenuCategorySelection());
         }
 
+        /// <summary>
+        /// Event handler for Pterodactyl Wings button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void SelectPterodactylWings(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -71,6 +91,44 @@ namespace PointOfSale
             NavigationService.Navigate(new MenuCategorySelection());
         }
 
+        /// <summary>
+        /// Event handler for Steakosaurus Burger
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void SelectSteakosaurusBurger(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                SteakosaurusBurger sb = new SteakosaurusBurger();
+                order.Add(sb);
+            }
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
 
+        private void SelectTRexKingBurger(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                TRexKingBurger trex = new TRexKingBurger();
+                order.Add(trex);
+            }
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
+
+        /// <summary>
+        /// Event handler for Veloci-Wrap button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void SelectVelociWrap(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                VelociWrap vw = new VelociWrap();
+                order.Add(vw);
+            }
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
     }
 }
